@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Luminax AI - Gamified Study Community Design System
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Gaming-inspired dark theme */
+    --background: 220 25% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 25% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Electric blue-purple gradient system */
+    --primary: 250 70% 60%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 260 80% 70%;
+
+    /* Neon cyan accents */
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 220 25% 6%;
+
+    /* Subtle dark variants */
+    --muted: 220 25% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Gaming accent colors */
+    --accent: 160 100% 50%;
+    --accent-foreground: 220 25% 6%;
+
+    /* Achievement colors */
+    --success: 120 100% 50%;
+    --success-foreground: 220 25% 6%;
+
+    --warning: 30 100% 60%;
+    --warning-foreground: 220 25% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Gaming UI elements */
+    --border: 220 25% 15%;
+    --input: 220 25% 12%;
+    --ring: 250 70% 60%;
+
+    /* XP and progress colors */
+    --xp-bronze: 30 100% 60%;
+    --xp-silver: 210 20% 80%;
+    --xp-gold: 45 100% 60%;
+    --xp-diamond: 200 100% 70%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(250 70% 60%), hsl(260 80% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(180 100% 50%), hsl(160 100% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 6%), hsl(250 70% 60% / 0.2));
+    --gradient-card: linear-gradient(135deg, hsl(220 25% 8%), hsl(220 25% 12%));
+
+    /* Gaming effects */
+    --glow-primary: 0 0 20px hsl(250 70% 60% / 0.5);
+    --glow-secondary: 0 0 20px hsl(180 100% 50% / 0.5);
+    --glow-success: 0 0 20px hsl(120 100% 50% / 0.5);
+
+    --radius: 0.75rem;
+
+    /* Gaming sidebar */
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 250 70% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 220 25% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 25% 15%;
+    --sidebar-ring: 250 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Gaming Utility Classes */
+@layer components {
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+  
+  .glow-success {
+    box-shadow: var(--glow-success);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .xp-glow {
+    animation: xp-pulse 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  @keyframes xp-pulse {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.8);
+    }
+  }
+  
+  @keyframes streak-flame {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(2deg);
+    }
+  }
+  
+  .streak-animation {
+    animation: streak-flame 1.5s ease-in-out infinite;
+  }
+}
